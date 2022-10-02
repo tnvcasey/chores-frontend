@@ -1,4 +1,6 @@
 import React, { useState, useEffect }from "react"
+import ChoreCard from "./ChoreCard"
+
 
 function ChoreList(){
 
@@ -7,11 +9,18 @@ function ChoreList(){
     useEffect(() => {
         fetch("http://localhost:3000/chores")
             .then((res) => res.json())
-            .then((chores) => console.log(chores))
+            .then((chores) => setChores(chores))
     }, [])
 
     return(
-        <div>These are the chores</div>
+        <div>
+            <h1 className="chorelist">Chores That Need To Be Done</h1>
+            <ul>
+                {chores.map((chore) => (
+                    <ChoreCard chore={chore}/>
+                ))}
+            </ul>
+        </div>
     )
 }
 
