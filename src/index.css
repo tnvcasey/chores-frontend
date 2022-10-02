@@ -6,14 +6,14 @@ h1.header{
   text-align: center;
   font-size: 5rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: beige;
+  color: ivory;
   border-style: double;
 }
 
 .card{
   display:-moz-grid; 
   text-align: center;
-  color: beige;
+  color: ivory;
   font-size: 2rem;
 }
 
