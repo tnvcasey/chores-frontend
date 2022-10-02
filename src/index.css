@@ -17,9 +17,15 @@ h1.header{
   font-size: 2rem;
 }
 
-ul.horizontal-list li{
-  display:inline-flex; 
+ul.horizontal-list{
+  display:inline-block;
   text-align: center;
+  font-size: 1.2rem;
+  justify-content: center;
+}
+
+li{
+  display: inline-block;
 }
 
 

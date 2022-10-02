@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import { Route, Switch } from "react-router-dom";
 import MemberList from "./MemberList";
 import Header from "./Header";
+import ChoreList from "./ChoreList";
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
                 <Route exact path='/'>
                     <Header />
                     <MemberList members={members}/>
+                </Route>
+                <Route exact path='/chores'>
+                    <ChoreList />
                 </Route>
             </Switch>
         </div>
