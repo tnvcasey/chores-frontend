@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import MemberList from "./MemberList";
 import Header from "./Header";
 import ChoreList from "./ChoreList";
+import RoomList from "./RoomList";
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
                 </Route>
                 <Route exact path='/chores'>
                     <ChoreList />
+                </Route>
+                <Route exact path='/rooms'>
+                    <RoomList />
                 </Route>
             </Switch>
         </div>
