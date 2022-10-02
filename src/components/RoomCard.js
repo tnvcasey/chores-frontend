@@ -4,7 +4,7 @@ function RoomCard({room}){
 
     return(
         <div>
-            <h1>{room.location}</h1>
+            <h1 className="roomList">*{room.location}</h1>
         </div>
     )
 

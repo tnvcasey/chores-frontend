@@ -18,7 +18,15 @@ function RoomList(){
                     <RoomCard room={room}/>
                 ))}
             </ul>
+            <span>
+                <h2 className="room">ADD A NEW ROOM</h2>
+                <form className="room">
+                    <input type="text"/>
+                    <button>Add Room</button>
+                </form>
+            </span>
         </div>
+
     )
 }
 
