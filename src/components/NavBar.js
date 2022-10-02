@@ -14,6 +14,7 @@ const linkStyles = {
     return (
         <div>
             <ul className="horizontal-list">
+                <li><NavLink to="/" style={linkStyles}>Home</NavLink></li>
                 <li><NavLink to="/chores" style={linkStyles}>Chore List</NavLink></li>
                 <li><NavLink to="/members/new" style={linkStyles}>Add a Family Member</NavLink></li>
                 <li><NavLink to="/chores/new" style={linkStyles}>Add a Chore</NavLink></li>

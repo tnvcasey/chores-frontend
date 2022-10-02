@@ -28,4 +28,11 @@ li{
   display: inline-block;
 }
 
+h1.chorelist{
+  text-align: center;
+  font-size: 3rem;
+  border-style: double;
+}
+
+
 
