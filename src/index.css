@@ -49,4 +49,10 @@ h1.roomList{
   border-radius: initial;
 }
 
+input.room{
+  height: 20px;
+  width: 200px;
+  font-size: 10pt;
+}
+
 

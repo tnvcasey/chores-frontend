@@ -20,8 +20,8 @@ function RoomList(){
             </ul>
             <span>
                 <h2 className="room">ADD A NEW ROOM</h2>
-                <form className="room">
-                    <input type="text"/>
+                <form>
+                    <input className="room" type="text"/>
                     <button>Add Room</button>
                 </form>
             </span>
