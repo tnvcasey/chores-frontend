@@ -5,6 +5,8 @@ import MemberList from "./MemberList";
 import Header from "./Header";
 import ChoreList from "./ChoreList";
 import RoomList from "./RoomList";
+import MemberDetails from "./MemberDetails";
+import Login from "./Login";
 
 
 function App() {
@@ -30,6 +32,12 @@ function App() {
                 </Route>
                 <Route exact path='/rooms'>
                     <RoomList />
+                </Route>
+                <Route exact path='/members/:id'>
+                    <MemberDetails />
+                </Route>
+                <Route exact path='/login'>
+                    <Login />
                 </Route>
             </Switch>
         </div>

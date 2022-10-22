@@ -1,4 +1,5 @@
 import MemberCard from "./MemberCard";
+import { useParams } from "react-router-dom"
 
 function MemberList({members}){
     return(
