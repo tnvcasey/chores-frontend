@@ -8,31 +8,20 @@ function Login(){
 
 function handleSubmit(e){
     e.preventDefault()
-    fetch("https://localhost:3000/users", {
+    const userData = {
+        username, 
+        password, 
+        password_confirmation: passwordConfirmation
+    }
+    fetch('http:/localhost:3000/users', {
         method: "POST",
-        headers: {
-            "Accepts": "application/json", 
+        mode: 'no-cors',
+        headers: { 
             "Content-Type": "application/json"
         }, 
-        body: JSON.stringify({
-            username, 
-            password, 
-            password_confirmation: passwordConfirmation
-        })
+        body: JSON.stringify(userData),
     })
-    .then(resp => {
-        if(resp.ok){
-            resp.json().then(data => {
-                console.log(data)
-                setUsername("")
-                setPassword("")
-                setPasswordConfirmation("")
-            })
-        } else {
-            console.warn("signup unsuccessful")
-        }
-    })
-
+        .then(console.log(userData))
 }
     return ( 
         <div>
@@ -44,7 +33,7 @@ function handleSubmit(e){
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 /><br/>
-                <label>Password:</label><br/>
+                <label htmlFor="username-input">Password:</label><br/>
                 <input
                     type="text"
                     value={password}

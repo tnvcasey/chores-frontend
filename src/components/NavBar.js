@@ -16,7 +16,6 @@ const linkStyles = {
             <ul className="horizontal-list">
                 <li><NavLink to="/" style={linkStyles}>HOME</NavLink></li>
                 <li><NavLink to="/chores" style={linkStyles}>CHORES</NavLink></li>
-                <li><NavLink to="/rooms" style={linkStyles}>ROOMS</NavLink></li>
             </ul>
         </div>
   )}

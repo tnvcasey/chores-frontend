@@ -8,7 +8,7 @@ function MemberDetails(){
     const { id } = useParams(); 
 
     useEffect(() => (
-        fetch(`http://localhost:3000/members/${id}`)
+        fetch(`/members/${id}`)
             .then(res => res.json())
             .then((member) => setMember(member))
     ), [])
