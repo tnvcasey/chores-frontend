@@ -5,6 +5,7 @@ import MemberList from "./MemberList";
 import NewMember from "./NewMember";
 import Login from "./Login";
 import Signup from "./Signup";
+import ChoreList from "./ChoreList";
 
 
 function App() {
@@ -33,11 +34,14 @@ function App() {
           <main>
             {user ? (
             <Switch>
-              <Route path="/new">
-                <NewMember user={user} />
-              </Route>
               <Route path="/">
                 <MemberList />
+              </Route>
+              <Route path="/chores">
+                <ChoreList />
+              </Route>
+              <Route path="/new">
+                <NewMember user={user} />
               </Route>
             </Switch>
             ) : (

@@ -26,7 +26,7 @@ const linkStyles = {
             <>
               <Link to="/signup" style={linkStyles}>Sign Up</Link>
               <Link to="/login" style={linkStyles}>Login</Link>
-              <Link to="/members" style={linkStyles}>Family Members</Link>
+              <Link to="/" style={linkStyles}>Family Members</Link>
               <Link to="/chores" style={linkStyles}>All Chores</Link>
             </>
           )}
