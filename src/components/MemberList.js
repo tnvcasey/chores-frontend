@@ -1,7 +1,16 @@
 import MemberCard from "./MemberCard";
-import { useParams } from "react-router-dom"
+import React, {useEffect, useState} from "react";
 
-function MemberList({members}){
+function MemberList(){
+
+    const [members, setMembers] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/members")
+            .then((res) => res.json())
+            .then((members) => setMembers(members))
+    }, [])
+
     return(
         <div>
             <ul className="card">

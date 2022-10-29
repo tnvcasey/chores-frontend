@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const linkStyles = {
     display: "inline-block",
@@ -10,15 +10,30 @@ const linkStyles = {
     color: "black"
   }; 
 
-  function NavBar() {
+  function NavBar({ user, onLogout }) {
+    function handleLogout() {
+      fetch("/logout", {
+        method: "DELETE", 
+      }).then(() => onLogout());
+    }
+  
     return (
+      <header>
         <div>
-            <ul className="horizontal-list">
-                <li><NavLink to="/" style={linkStyles}>HOME</NavLink></li>
-                <li><NavLink to="/chores" style={linkStyles}>CHORES</NavLink></li>
-            </ul>
+          {user ? (
+            <button onClick={handleLogout}>Logout</button>
+          ) : (
+            <>
+              <Link to="/" style={linkStyles}>Home</Link>
+              <Link to="/signup" style={linkStyles}>Sign Up</Link>
+              <Link to="/login" style={linkStyles}>Login</Link>
+              <Link to="/members" style={linkStyles}>Family Members</Link>
+              <Link to="/chores" style={linkStyles}>All Chores</Link>
+            </>
+          )}
         </div>
-  )}
-
-export default NavBar; 
-
+      </header>
+    );
+  }
+  
+  export default NavBar;
