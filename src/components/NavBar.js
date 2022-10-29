@@ -24,7 +24,6 @@ const linkStyles = {
             <button onClick={handleLogout}>Logout</button>
           ) : (
             <>
-              <Link to="/" style={linkStyles}>Home</Link>
               <Link to="/signup" style={linkStyles}>Sign Up</Link>
               <Link to="/login" style={linkStyles}>Login</Link>
               <Link to="/members" style={linkStyles}>Family Members</Link>
