@@ -6,14 +6,16 @@ function Login({ handleLogin }){
 
     function handleSubmit(e){
         e.preventDefault()
+        const userData = {
+            username, 
+            password
+        }
         fetch("/login", {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json", 
             }, 
-            body: JSON.stringify({
-                username,
-                password})
+            body: JSON.stringify(userData)
         })
             .then((res) => res.json())
             .then((user) => handleLogin(user)); 

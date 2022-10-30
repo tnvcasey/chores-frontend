@@ -34,7 +34,7 @@ function App() {
           <main>
             {user ? (
             <Switch>
-              <Route path="/">
+              <Route path="/members">
                 <MemberList />
               </Route>
               <Route path="/chores">
@@ -47,7 +47,7 @@ function App() {
             ) : (
             <Switch>
               <Route path="/signup">
-                <Signup />
+                <Signup setUser={setUser}/>
               </Route>
               <Route path="/login">
                 <Login handleLogin={handleLogin} />

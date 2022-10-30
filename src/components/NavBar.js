@@ -21,13 +21,15 @@ const linkStyles = {
       <header>
         <div>
           {user ? (
-            <button onClick={handleLogout}>Logout</button>
+            <div>
+              <Link to="/members" style={linkStyles}>Family Members</Link>
+              <Link to="/chores" style={linkStyles}>All Chores</Link>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
           ) : (
             <>
               <Link to="/signup" style={linkStyles}>Sign Up</Link>
               <Link to="/login" style={linkStyles}>Login</Link>
-              <Link to="/" style={linkStyles}>Family Members</Link>
-              <Link to="/chores" style={linkStyles}>All Chores</Link>
             </>
           )}
         </div>
