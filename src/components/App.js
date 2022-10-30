@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import NavBar from "./NavBar";
 import { Route, Switch } from "react-router-dom";
-import MemberList from "./MemberList";
+import MemberList from "./MemberList"
 import NewMember from "./NewMember";
 import Login from "./Login";
 import Signup from "./Signup";
