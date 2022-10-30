@@ -30,6 +30,7 @@ function App() {
 
       return (
         <>
+          <h1>Family Chore Tracker</h1>
           <NavBar user={user} setUser={setUser} handleLogout={handleLogout} />
           <main>
             {user ? (

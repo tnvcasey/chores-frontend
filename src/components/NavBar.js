@@ -10,11 +10,11 @@ const linkStyles = {
     color: "black"
   }; 
 
-  function NavBar({ user, onLogout }) {
-    function handleLogout() {
+  function NavBar({ user, handleLogout }) {
+    function onLogout() {
       fetch("/logout", {
         method: "DELETE", 
-      }).then(() => onLogout());
+      }).then(() => handleLogout());
     }
   
     return (
@@ -24,7 +24,7 @@ const linkStyles = {
             <div>
               <Link to="/members" style={linkStyles}>Family Members</Link>
               <Link to="/chores" style={linkStyles}>All Chores</Link>
-              <button onClick={handleLogout}>Logout</button>
+              <button onClick={onLogout}>Logout</button>
             </div>
           ) : (
             <>
