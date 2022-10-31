@@ -4,8 +4,7 @@ function ChoreCard({chore}){
         <div>
             <ul>
                 <h2>*{chore.description}*</h2>
-                <h4>-Supplies Needed: {chore.supplies}</h4>
-                <li>Instructions: {chore.directions}</li>
+                <h4>-Instructions: {chore.details}</h4>
             </ul>
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         </div>

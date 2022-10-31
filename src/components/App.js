@@ -6,9 +6,18 @@ import NewMember from "./NewMember";
 import Login from "./Login";
 import Signup from "./Signup";
 import ChoreList from "./ChoreList";
+import MemberDetails from "./MemberDetails";
 
 
 function App() {
+
+  const [members, setMembers] = useState([])
+
+  useEffect(() => {
+      fetch("http://localhost:3000/members")
+          .then((res) => res.json())
+          .then((members) => setMembers(members))
+  }, [])
 
     const [user, setUser] = useState(null);
 
@@ -35,8 +44,11 @@ function App() {
           <main>
             {user ? (
             <Switch>
-              <Route path="/members">
-                <MemberList />
+              <Route exact path="/members">
+                <MemberList members={members} />
+              </Route>
+              <Route exact path="/members/:id">
+                <MemberDetails members={members} />
               </Route>
               <Route path="/chores">
                 <ChoreList />

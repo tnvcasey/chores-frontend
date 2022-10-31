@@ -1,22 +1,19 @@
-import MemberCard from "./MemberCard";
-import React, {useEffect, useState} from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-function MemberList(){
+function MemberList({members}){
 
-    const [members, setMembers] = useState([])
-
-    useEffect(() => {
-        fetch("http://localhost:3000/members")
-            .then((res) => res.json())
-            .then((members) => setMembers(members))
-    }, [])
 
     return(
         <div>
-            <h1>My Family Members</h1>
+            <h1 className="family">My Family Members</h1>
             <ul className="card">
                 {members.map((member) => (
-                    <MemberCard member={member} />
+                    <div>
+                        <h2>{member.name}</h2>
+                        <img src={member.picture} width="400" height="300"/><br/>
+                        <Link to={`/members/${member.id}`} >View My Chores</Link>
+                    </div>
                 ))}
             </ul>
         </div>
