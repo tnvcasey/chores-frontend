@@ -54,6 +54,21 @@ h1.roomList{
   border-radius: initial;
 }
 
+h1.detail{
+  font-size: 5rem;
+  text-align: center;
+  border-style: solid;
+}
+
+.center{
+  text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+}
+
 input.room{
   height: 20px;
   width: 200px;

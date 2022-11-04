@@ -19,7 +19,8 @@ function App() {
           .then((members) => setMembers(members))
   }, [])
 
-    const [user, setUser] = useState(null);
+
+  const [user, setUser] = useState(null);
 
     useEffect(() => {
         fetch("/me").then((r) => {
