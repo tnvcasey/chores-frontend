@@ -11,7 +11,7 @@ function MemberDetails({handleAddChore}){
     const [details, setDetails] = useState("")
 
     useEffect(() => {
-        fetch(`http://localhost:3000/members/${id}`)
+        fetch(`/members/${id}`)
         .then(res => res.json())
         .then((member) => setMember(member))
     }, [])
@@ -22,7 +22,7 @@ function MemberDetails({handleAddChore}){
             description: description, 
             details: details
         }
-        fetch(`http://localhost:3000/chores`, {
+        fetch("/chores", {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json", 

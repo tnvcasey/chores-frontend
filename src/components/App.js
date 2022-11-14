@@ -11,60 +11,41 @@ import MemberDetails from "./MemberDetails";
 
 function App() {
 
-  const [members, setMembers] = useState([])
-  const [chores, setChores] = useState([])
   const [user, setUser] = useState(null);
-
-  useEffect(() => {
-      fetch("http://localhost:3000/members")
-          .then((res) => res.json())
-          .then((members) => setMembers(members))
-  }, [])
 
   useEffect(() => {
     fetch("/me").then((response) => {
       if(response.ok) {
-        response.json().then((user) => console.log(user));
+        response.json().then((user) => setUser(user));
       }
     })
   }, []); 
 
+  function handleLogin(user) {
+    setUser(user)
+  }
 
-      function handleLogin(user) {
-        setUser(user)
-      }
-
-      function handleLogout(){
-        setUser(null)
-      }
-
-      useEffect(() => {
-        fetch("http://localhost:3000/chores")
-          .then((res) => res.json())
-          .then((chores) => setChores(chores))
-      }, [])
-
-      function handleAddChore(newChore){
-        const updatedChores = [...chores, newChore]
-        setChores(updatedChores)
-      }
+  function onLogout(){
+    setUser(null)
+  }
 
 
 
       return (
         <>
           <h1>Family Chore Tracker</h1>
-          <NavBar user={user} setUser={setUser} handleLogout={handleLogout} />
+          <NavBar user={user} setUser={setUser} onLogout={onLogout} />
           <main>
+            {user ? (
             <Switch>
               <Route exact path="/members">
-                <MemberList members={members} />
+                <MemberList />
               </Route>
               <Route exact path="/members/:id">
-                <MemberDetails members={members} handleAddChore={handleAddChore}/>
+                <MemberDetails />
               </Route>
               <Route path="/chores">
-                <ChoreList chores={chores}/>
+                <ChoreList />
               </Route>
               <Route path="/new">
                 <NewMember user={user} />
@@ -79,7 +60,7 @@ function App() {
                 <Login handleLogin={handleLogin} />
               </Route>
             </Switch>
-            )
+            )}
           </main>
         </>
       );
