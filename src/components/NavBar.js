@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useSyncExternalStore } from "react";
 import { Link } from "react-router-dom";
 
 const linkStyles = {
@@ -10,11 +10,12 @@ const linkStyles = {
     color: "black"
   }; 
 
-  function NavBar({ user, handleLogout }) {
-    function onLogout() {
+  function NavBar({ user,onLogout }) {
+    
+    function handleLogout() {
       fetch("/logout", {
         method: "DELETE", 
-      }).then(() => handleLogout());
+      }).then(() => onLogout());
     }
   
     return (
@@ -22,9 +23,10 @@ const linkStyles = {
         <div>
           {user ? (
             <div>
+              <p>Welcome, {user.username}</p>
               <Link to="/members" style={linkStyles}>Family Members</Link>
               <Link to="/chores" style={linkStyles}>All Chores</Link>
-              <button onClick={onLogout}>Logout</button>
+              <button onClick={handleLogout}>Logout</button>
             </div>
           ) : (
             <>

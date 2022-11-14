@@ -69,11 +69,14 @@ h1.detail{
 
 }
 
-input.room{
-  height: 20px;
-  width: 200px;
-  font-size: 10pt;
-  justify-content: center;
+
+h1.chore{
+  font-size: 3rem;
 }
+
+h2.chores{
+  font-size: 3rem;
+}
+
 
 

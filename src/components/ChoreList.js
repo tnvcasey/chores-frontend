@@ -2,15 +2,7 @@ import React, { useState, useEffect }from "react"
 import ChoreCard from "./ChoreCard"
 
 
-function ChoreList(){
-
-    const [chores, setChores] = useState([])
-
-    useEffect(() => {
-        fetch("http://localhost:3000/chores")
-            .then((res) => res.json())
-            .then((chores) => setChores(chores))
-    }, [])
+function ChoreList({chores}){
 
     return(
         <div>
